@@ -1,93 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
     padding: 20px;
-    background-color: #f0f0f0;
 }
+
 h1 {
-    text-align: center;
     color: #333;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
 }
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #a29bfe, #74b9ff);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#f {
+    background: #ffffff;
+    padding: 30px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+    margin-top: 30px;
+}
+
+#f h2 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#f h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #a29bfe, #74b9ff);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#f label {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #555555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#f input[type="text"],
+#f input[type="date"],
+#f textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fafafa;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+#f input:focus,
+#f textarea:focus {
+    border: 1px solid #74b9ff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(116, 185, 255, 0.6);
+}
+
+#f textarea {
+    resize: none;
+    min-height: 80px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 15px;
+}
+
+#f button {
+    width: 100%;
+    background: linear-gradient(90deg, #74b9ff, #a29bfe);
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+#f button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+#f button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Todo List Styles */
+h2 {
+    color: #333;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 30px 0 15px 0;
+}
+
+h5 {
+    color: #666;
+    text-align: center;
+    font-weight: 500;
     margin-bottom: 20px;
 }
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #666;
-}
-input, textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-}
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #45a049;
-}
-ul {
-    list-style-type: none;
+
+#list {
+    list-style: none;
     padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;  /* Stack list items vertically */
+    align-items: center;  /* Center the list items */
 }
-li {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+#list li {
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    width: 100%;  /* Take full available width */
+    max-width: 600px;  /* Set a maximum width for large screens */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    animation: slideIn 0.3s ease-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Align items vertically in the center */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 20px;  /* Adds space between items */
 }
-.todo-name {
-    font-weight: bold;
+
+#list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+#list li h3 {
+    margin: 0;
     color: #333;
+    font-size: 1.2rem;
+    flex: 2;  /* Ensure the name occupies more space */
 }
-.todo-description {
+
+#list li p {
+    margin: 0;
     color: #666;
-    margin: 5px 0;
-}
-.todo-date {
-    font-size: 0.9em;
-    color: #999;
-}
-.todo-status{
-    text-align: end;
-}
-.todo-status button{
-    background: linear-gradient(to right, #00bcd4, #8e24aa)}
-.todo-complete button{
-    background: linear-gradient(to right, #28a745, #4caf50);
-color: white;
-border: none;
-border-radius: 5px;
-padding: 10px 20px;
-font-weight: bold;
-cursor: pointer;
-
-}
-.delete-button {
-    background-color: #e74c3c; /* Red */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 4px; /* Slightly rounded corners */
-    padding: 5px 10px; /* Add some padding for better visual appearance */
-    font-size: 13px; /* Font size */
-    cursor: pointer; /* Change cursor to indicate it's clickable */
-    transition: background-color 0.3s; /* Smooth background color transition */
+    font-size: 0.95rem;
+    flex: 3;  /* Make description occupy more space */
 }
 
-.delete-button:hover {
-    background-color: #c0392b; /* Darker red on hover */
+#list li .date {
+    color: #74b9ff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-right: 15px;  /* Space for the button */
+    text-align: center;
+    flex: 1;  /* Make date element smaller */
+}
+
+#list li button {
+    background: linear-gradient(90deg, #ff6b6b, #ff8787);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-self: flex-start; /* Align button to the top */
+}
+
+#list li button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+#list li.completed button {
+    background: linear-gradient(90deg, #6c5ce7, #a29bfe);  /* Soft purple gradient */
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#list li.completed button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(108, 92, 231, 0.4);  /* Add subtle shadow for hover */
+}
+
+#list li.completed button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    #f {
+        padding: 20px 25px;
+    }
+    
+    #f h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust the flex layout in smaller screens */
+    #list {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #list li {
+        flex-direction: column;  /* Stack the elements vertically in smaller screens */
+        padding: 15px 12px;  /* Adjust padding to fit better */
+    }
+
+    #list li h3, 
+    #list li p, 
+    #list li .date {
+        flex: none;  /* Let the items take up only the needed space */
+    }
+
+    #list li button {
+        align-self: center;  /* Center the button in small screens */
+        margin-top: 10px;
+    }
 }
