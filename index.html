@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo.css">
+    <title>Todo List</title>
+   
+</head>
+<body>
+    <h1>Todo List</h1>
+    
+    <form id="f">
+        <h2>Add New Todo</h2>
+        <label for="todo-name">Name:</label>
+        <input type="text" id="todo-name" name="todo-name" required>
+        <label for="todo-description">Description:</label>
+        <textarea id="todo-description" name="todo-description" rows="3"></textarea>
+        <label for="todo-date">Date:</label>
+        <input type="date" id="todo-date" name="todo-date">
+        <button type="submit">Add Todo</button>
+    </form>
+    
+    <h2>Todo All Items</h2>
+    <h5>Note: Click on "🔥 Active!" to mark your todo as completed once it's done!</h5>
+
+    <ul id="list">
+       
+    </ul>
+   <script src="todo.js"></script>
+</body>
+</html>
